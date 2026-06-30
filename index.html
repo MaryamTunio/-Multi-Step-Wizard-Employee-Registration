@@ -1,0 +1,269 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Registration</title>
+  <link class="tel-input" rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="card">
+
+    <div class="stepper" id="stepper">
+
+      <div class="step-wrapper active" id="sw1">
+        <div class="step-row">
+          <div class="step-circle active" id="sc1">1</div>
+          <div class="step-line" id="sl1"></div>
+        </div>
+        <div class="step-label">Personal</div>
+      </div>
+
+      <div class="step-wrapper" id="sw2">
+        <div class="step-row">
+          <div class="step-circle" id="sc2">2</div>
+          <div class="step-line" id="sl2"></div>
+        </div>
+        <div class="step-label">Contact</div>
+      </div>
+
+      <div class="step-wrapper" id="sw3">
+        <div class="step-row">
+          <div class="step-circle" id="sc3">3</div>
+          <div class="step-line" id="sl3"></div>
+        </div>
+        <div class="step-label">Emergency</div>
+      </div>
+
+      <div class="step-wrapper" id="sw4">
+        <div class="step-row">
+          <div class="step-circle" id="sc4">4</div>
+        </div>
+        <div class="step-label">Role</div>
+      </div>
+
+    </div>
+
+    <!-- Step 1: Personal details -->
+    <div class="step-section active" id="step1">
+      <p class="step-heading">Personal details</p>
+      <p class="step-sub">Tell us a little about yourself.</p>
+
+      <div class="row-2">
+        <div class="field">
+          <label class="field-label" for="fullName">Full name <span class="req">*</span></label>
+          <input type="text" id="fullName" placeholder="Enter your full name">
+          <div class="err-msg" id="e-fullName">Please enter your full name.</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="dob">Date of birth <span class="req">*</span></label>
+          <input type="date" id="dob">
+          <div class="err-msg" id="e-dob">You must be at least 18 years old.</div>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label class="field-label" for="gender">Gender <span class="req">*</span></label>
+          <select id="gender">
+            <option value="">Select…</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Non-binary</option>
+            <option>Prefer not to say</option>
+          </select>
+          <div class="err-msg" id="e-gender">Please select a gender.</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="nationality">Nationality <span class="req">*</span></label>
+          <input type="text" id="nationality" placeholder="Enter your nationality">
+          <div class="err-msg" id="e-nationality">Please enter your nationality.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="photo">Profile photo <span class="opt">(optional)</span></label>
+        <input type="file" id="photo" accept="image/*">
+      </div>
+    </div>
+
+    <!-- Step 2: Contact information -->
+    <div class="step-section" id="step2">
+      <p class="step-heading">Contact information</p>
+      <p class="step-sub">How can we reach you?</p>
+
+      <div class="row-2">
+        <div class="field">
+          <label class="field-label" for="email">Email address <span class="req">*</span></label>
+          <input type="email" id="email" placeholder="ali@example.com">
+          <div class="err-msg" id="e-email">Enter a valid email address.</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="phone">Phone number <span class="req">*</span></label>
+          <input type="tel" id="phone" class="tel-input">
+          <div class="err-msg" id="e-phone">Enter a valid phone number.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="street">Street address <span class="req">*</span></label>
+        <input type="text" id="street" placeholder="123 Blue Area, G-6">
+        <div class="err-msg" id="e-street">Please enter your street address.</div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label class="field-label" for="city">City <span class="req">*</span></label>
+          <input type="text" id="city" placeholder="Islamabad">
+          <div class="err-msg" id="e-city">Please enter your city.</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="zip">ZIP / Postal code <span class="req">*</span></label>
+          <input type="text" id="zip" placeholder="44000">
+          <div class="err-msg" id="e-zip">Please enter a ZIP / postal code.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="linkedin">LinkedIn profile URL <span class="opt">(optional)</span></label>
+        <input type="url" id="linkedin" placeholder="https://linkedin.com/in/yourname">
+      </div>
+    </div>
+
+    <!-- Step 3: Emergency contact -->
+    <div class="step-section" id="step3">
+      <p class="step-heading">Emergency contact</p>
+      <p class="step-sub">Who should we contact in an emergency?</p>
+
+      <div class="row-2">
+        <div class="field">
+          <label class="field-label" for="ecName">Contact name <span class="req">*</span></label>
+          <input type="text" id="ecName" placeholder="Sara Hassan">
+          <div class="err-msg" id="e-ecName">Please enter the contact's name.</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="ecRel">Relationship <span class="req">*</span></label>
+          <select id="ecRel">
+            <option value="">Select…</option>
+            <option>Spouse</option>
+            <option>Parent</option>
+            <option>Sibling</option>
+            <option>Friend</option>
+            <option>Other</option>
+          </select>
+          <div class="err-msg" id="e-ecRel">Please select the relationship.</div>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label class="field-label" for="ecPhone">Phone number <span class="req">*</span></label>
+          <input type="tel" id="ecPhone" class="tel-input">
+          <div class="err-msg" id="e-ecPhone">Enter a valid phone number.</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="ecEmail">Email address <span class="req">*</span></label>
+          <input type="email" id="ecEmail" placeholder="sara@example.com">
+          <div class="err-msg" id="e-ecEmail">Enter a valid email address.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4: Role preferences -->
+    <div class="step-section" id="step4">
+      <p class="step-heading">Role preferences</p>
+      <p class="step-sub">Help us place you in the right role.</p>
+
+      <div class="row-2">
+        <div class="field">
+          <label class="field-label" for="dept">Department <span class="req">*</span></label>
+          <select id="dept">
+            <option value="">Select…</option>
+            <option>Engineering</option>
+            <option>Design</option>
+            <option>Marketing</option>
+            <option>HR</option>
+            <option>Finance</option>
+            <option>Operations</option>
+          </select>
+          <div class="err-msg" id="e-dept">Please select a department.</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="startDate">Expected start date <span class="req">*</span></label>
+          <input type="date" id="startDate">
+          <div class="err-msg" id="e-startDate">Please select a start date.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Employment type <span class="req">*</span></label>
+        <div class="radio-group" id="grp-empType">
+          <label class="radio-option">
+            <input type="radio" name="empType" value="Full-time"> <span>Full-time</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="empType" value="Part-time"> <span>Part-time</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="empType" value="Contract"> <span>Contract</span>
+          </label>
+        </div>
+        <div class="err-msg" id="e-empType">Please select an employment type.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Work preference <span class="req">*</span></label>
+        <div class="radio-group" id="grp-workPref">
+          <label class="radio-option">
+            <input type="radio" name="workPref" value="On-site"> <span>On-site</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="workPref" value="Hybrid"> <span>Hybrid</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="workPref" value="Remote"> <span>Remote</span>
+          </label>
+        </div>
+        <div class="err-msg" id="e-workPref">Please select a work preference.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="bio">Short bio / cover note <span class="opt">(optional)</span></label>
+        <textarea id="bio" maxlength="300" placeholder="Tell us a bit about yourself and your goals…"></textarea>
+        <div class="char-row">
+          <span class="char-count" id="bioCount">0 / 300</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Screen -->
+    <div class="success" id="successScreen">
+      <div class="success-icon">✓</div>
+      <h2>Registration complete!</h2>
+      <p>Thanks for submitting your details.<br>Our HR team will review your application and be in touch soon.</p>
+      <div class="summary">
+        <div class="summary-title">Submission summary</div>
+        <div class="summary-grid" id="summaryGrid"></div>
+      </div>
+      <button class="restart-btn" onclick="restart()">← Submit another response</button>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav" id="navBar">
+      <button class="btn btn-back" id="backBtn" onclick="navigate(-1)">← Back</button>
+      <span class="step-counter" id="stepCounter">Step 1 of 4</span>
+      <button class="btn btn-primary" id="nextBtn" onclick="navigate(1)">Next →</button>
+    </div>
+
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
